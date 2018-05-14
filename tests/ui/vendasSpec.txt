@@ -1,0 +1,7 @@
+Arquivo: views/vendas.ejs
+Tipo: HTML5/JavaScript/EJS
+Descrição: Página onde o usuário pode realizar uma pesquisa dos imóveis disponíveis
+para venda, deve ser feita de acordo com o layout fornecido pelo cliente.
+As rotas que podem ser utilizadas na pesquisa de imóveis estão documentadas em 
+tests/constrollers/searchSpec.js. O usuário deve poder pesquisar imóveis por 
+procedencia, bairro, tipo e preço maximo, além de procedencia e listas de destaque/oportunidades

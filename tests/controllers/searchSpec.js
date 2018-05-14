@@ -18,8 +18,8 @@
             '/search/vendas/oportunidades'
                 Retorna imóveis onde isVenda = true e isOportunidade = true
             
-            '/search/alugueis/:proc&:tipo&:bairro&:valor'
-                Retorna imovéis onde isVenda = false, procedencia = :proc,
+            '/search/alugueis/:tipo&:bairro&:valor'
+                Retorna imovéis onde isVenda = false,
                 tipo = :tipo, bairro = :bairro e valor <= :valor
                 O valor "null" (STRING) deve ser considerado como wildcard 
                 no parametro específico, e.g. null&apartamento&asanorte&null 

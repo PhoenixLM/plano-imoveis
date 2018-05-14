@@ -45,8 +45,6 @@ module.exports = (app) => {
     app.get('/search/alugueis/:tipo&:bairro&:valor', (req, res, next) => {
         var query = {}
         query["isVenda"] = false
-        var reqProc   = req.params.proc
-        if(reqProc !== 'null') query["procedencia"] = reqProc
         var reqTipo   = req.params.tipo
         if(reqTipo !== 'null') query["tipo"] = reqTipo
         var reqBairro = req.params.bairro

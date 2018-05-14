@@ -1,0 +1,4 @@
+Arquivo: views/index.ejs
+Tipo: HTML5/EJS
+Descrição: Arquivo html que define a página index do site, deve ser feita
+de acordo com o layout fornecido pelo cliente.

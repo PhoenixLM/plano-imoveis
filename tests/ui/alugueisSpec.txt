@@ -1,0 +1,4 @@
+Arquivo: views/alugueis.ejs
+Tipo: HTML5/JavaScript/EJS
+Descrição: Página onde o usuário pode realizar uma pesquisa dos imóveis disponíveis
+para aluguel, deve ser feita de acordo com o layout fornecido pelo cliente.

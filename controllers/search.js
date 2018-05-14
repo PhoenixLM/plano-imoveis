@@ -23,6 +23,7 @@ module.exports = (app) => {
     app.get('/search/vendas/destaques', (req, res, next) => {
         var query = {}
         query["isDestaque"] = true
+        query["isVenda"] = true
 
         Imovel.find(query, (err, imovels) => {
             if(err) next(err)
@@ -34,6 +35,7 @@ module.exports = (app) => {
     app.get('/search/vendas/oportunidades', (req, res, next) => {
         var query = {}
         query["isOportunidade"] = true
+        query["isVenda"] = true
 
         Imovel.find(query, (err, imovels) => {
             if(err) next(err)

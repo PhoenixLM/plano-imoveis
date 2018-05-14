@@ -7,4 +7,7 @@ tests/constrollers/searchSpec.js. O usuário deve poder pesquisar imóveis por
 procedencia, bairro, tipo e preço maximo, além de procedencia e listas de destaque/oportunidades.
 As imagens referentes ao imovel podem ser encontradas
 em public/img/[imovel._id] (sem chaves) onde imovel._id é o object id do anuncio na
-coleção mongo.
+coleção mongo. Dentro desta pasta as imagens estarão organizadas numericamente a partir
+de 0.jpg, com uma imagem "thumb.jpg" que serve de imagem principal e mede sempre 200x200 pixels.
+Caso nenhuma imagem para o anúncio seja encontrada, a interface deve utilizar as fotos localizadas
+em public/img/default, que seguem a mesma estrutura de um anúnico padrão

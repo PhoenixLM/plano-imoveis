@@ -7,7 +7,7 @@
         definida em models/db.js (ver tests/models/dbSpec.js). A Schema do
         documento fica definida como tal:
         cep: {                 Cep do imóvel
-            type: Number,
+            type: String,
             required: true
         },
         endereco: {            Endereço do imóvel
@@ -74,4 +74,7 @@
             type: Boolean,     lista de oportunidades
             required: true
         }
+
+        O arquivo deve também implementar um mongoose post hook de maneira que no
+        ato da remoção do documento, também seja deletada a pasta relevante em public/img
 */

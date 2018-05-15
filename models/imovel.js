@@ -1,9 +1,10 @@
 const db       = require('./db')
+const rimraf   = require('rimraf')
 const Schema   = db.Schema
 
 const imovelSchema = new Schema({
     cep: {
-        type: Number,
+        type: String,
         required: true
     },
     endereco: {
@@ -71,6 +72,13 @@ const imovelSchema = new Schema({
         required: true
     }
 })
+
+imovelSchema.post('remove', function(imovel) {
+    let path = './public/img/' + imovel._id
+    rimraf(path, (err) => {
+        console.log('Deletado: ' + path)
+    })
+});
 
 const Imovel = db.model('imovels', imovelSchema)
 module.exports = Imovel

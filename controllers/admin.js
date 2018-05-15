@@ -17,8 +17,9 @@ module.exports = (app) => {
 
     app.get('/admin/imoveis/search/:id', (req, res, next) => {
         let id = req.params.id
-        Imovel.find({_id : id}, (err, imovel) => {
+        Imovel.findById(id, (err, imovel) => {
             if(err) return next(err)
+            if(!imovel) return next()
             res.render('admin/imovel', {imovel : imovel})
         })
     })
@@ -32,17 +33,18 @@ module.exports = (app) => {
 
     app.get('/admin/admins/search/:id', (req, res, next) => {
         let id = req.params.id
-        Admin.find({_id : id}, (err, admin) => {
+        Admin.findById(id, (err, admin) => {
             if(err) return next(err)
+            if(!admin) return next()
             res.render('admin/admin', {admin : admin})
         })
     })
 
-    app.get('/admin/imovel/new', (req, res, next) => {
+    app.get('/admin/imoveis/new', (req, res, next) => {
         res.render('admin/imovel-form')
     })
 
-    app.post('/admin/imovel/new', (req, res, next) => {
+    app.post('/admin/imoveis/new', (req, res, next) => {
         let imovel = new Imovel(req.body)
         imovel.save((err) => {
             if(err) return next(err)
@@ -75,5 +77,56 @@ module.exports = (app) => {
         } else {
             res.send('Erro, nenhum arquivo no body da request')
         }
+    })
+
+    app.get('/admin/imoveis/delete/:id', (req, res, next) => {
+        let id = req.params.id
+        Imovel.findById(id, (err, imovel) => {
+            if(err) return next(err)
+            if(!imovel) return next()
+            imovel.remove((err) => {
+                if(err) return next(err)
+                console.log('Sucesso')
+                res.redirect('/admin/imoveis')
+            })
+        })
+    })
+
+    app.post('/admin/imoveis/update/:id', (req, res, next) => {
+        let id = req.params.id
+        Imovel.findById(id, (err, imovel) => {
+            if(err) return next(err)
+            if(!imovel) return next()
+            imovel.set(req.body)
+            imovel.save((err) => {
+                if(err) return next(err)
+                res.redirect('/admin/imoveis')
+            })
+        })
+    })
+
+    app.get('/admin/admins/delete/:id', (req, res, next) => {
+        let id = req.params.id
+        Admin.findById(id, (err, admin) => {
+            if(err) return next(err)
+            if(!admin) return next()
+            admin.remove((err) => {
+                if(err) return next(err)
+                res.redirect('/admin/admins')
+            })
+        })
+    })
+
+    app.post('/admin/admins/update/:id', (req, res, next) => {
+        let id = req.params.id
+        Admin.findById(id, (err, admin) => {
+            if(err) return next(err)
+            if(!admin) return next()
+            admin.set(req.body)
+            admin.save((err) => {
+                if(err) return next(err)
+                res.redirect('/admin/admins')
+            })
+        })
     })
 }

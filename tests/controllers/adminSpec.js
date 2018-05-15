@@ -56,5 +56,17 @@
                 Isso permite que o plugin de front-end 'fineuploader' possa
                 tentar novamente o upload do arquivo em questão. Caso não
                 haja erros modificar valor para 'true'.
+
+            (get) /admin/imoveis/delete/:id
+                Remove o documento da coleção 'imovels' de id referente a url
+
+            (post) /admin/imoveis/update/:id
+                Edita o documento da coleção 'imovels' de id referente a url
+
+            (get) /admin/admins/delete/:id
+                Remove o documento da coleção 'admins' de id referente a url
+
+            (post) /admin/admins/update/:id
+                Edita o documento da coleção 'admins' de id referente a url
             
 */

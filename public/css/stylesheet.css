@@ -1,0 +1,32 @@
+body, html {
+    height: 100%;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("/resources/ponte-jk.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fa {
+    font-size: 40px;
+}
+
+.fa-youtube {
+    color: #ff0000;
+}
+
+.fa-instagram {
+    color: #cc7093;
+}
+
+.fa-twitter {
+    color: #22bde4;
+}

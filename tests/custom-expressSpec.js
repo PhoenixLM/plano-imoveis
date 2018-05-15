@@ -4,8 +4,10 @@
     Descrição:
         Este arquivo deve definir os middlewares a serem utilizados pelo servidor, são eles:
             Express: Framework node express
+
             Express-load: Autoloader de scripts e modelos, carrega todas as rotas contidas dentro
                 da pasta controllers
+
             Sessions: Define um cookie criptografado para armazenamento de dados referentes a sessão
                 do usuário, o arquivo deve definir um cookie de nome "sessao" com as configurações
                 do arquivo de configuração segundo tal:
@@ -16,7 +18,12 @@
                 O atributo segredo deve ser gerado aleatóriamente e de tamanho suficiente para ser
                 seguro em ambiente de produção, a duração do cookie é definida em horas.
 
-        O arquivo deve também configurar a engine de rederização padrão para "ejs"
+            Auth: Middleware de autenticação, ver tests/middleware/authSpec.js para mais informações
+
+            Body-Parser: Middleware que transforma uma request 'url enconded' em um json 
+
+        O arquivo deve também configurar a engine de rederização padrão para "ejs" e a pasta 'public/'
+        como aberta para requests
 
 
  */

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/yvesnrb/plano-imoveis#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "client-sessions": "^0.8.0",
     "config": "^1.30.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",

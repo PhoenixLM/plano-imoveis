@@ -10,5 +10,10 @@
         "db"  : "test",
         "user": "",
         "pswd": ""
+    },
+
+    "Session": {
+        "secret": "5",         //Escolhido por um d20, garantidamente aleatório
+        "duration": 24
     }
 }

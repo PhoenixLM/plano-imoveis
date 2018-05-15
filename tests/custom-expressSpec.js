@@ -20,7 +20,11 @@
 
             Auth: Middleware de autenticação, ver tests/middleware/authSpec.js para mais informações
 
-            Body-Parser: Middleware que transforma uma request 'url enconded' em um json 
+            Body-Parser: Middleware que transforma uma request 'url enconded' em um json
+
+            Express-FileUploader: Middleware que possibilita acessar arquivos no body da request
+
+            Express-Validator: Middleware que possibilita validação de dados server-side
 
         O arquivo deve também configurar a engine de rederização padrão para "ejs" e a pasta 'public/'
         como aberta para requests

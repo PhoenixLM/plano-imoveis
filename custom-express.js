@@ -1,9 +1,11 @@
-const express       = require('express')
-const load          = require('express-load')
-const sessions      = require('client-sessions')
-const config        = require('config')
-const auth          = require('./middleware/auth')
-const bodyParser    = require('body-parser')
+const express          = require('express')
+const load             = require('express-load')
+const sessions         = require('client-sessions')
+const config           = require('config')
+const auth             = require('./middleware/auth')
+const bodyParser       = require('body-parser')
+const fileUpload       = require('express-fileupload')
+const expressValidator = require('express-validator')
 
 const _SECRET   = config.get('Session.secret')
 const _DURATION = config.get('Session.duration')
@@ -20,6 +22,8 @@ module.exports = () => {
     app.use('/admin/*', auth)
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(bodyParser.json());
+    app.use(fileUpload())
+    app.use(expressValidator())
     app.use(express.static('./public'))
     app.set('view engine', 'ejs')
     load('controllers').into(app)

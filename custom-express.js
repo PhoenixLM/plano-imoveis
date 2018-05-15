@@ -3,13 +3,16 @@ const load          = require('express-load')
 const sessions      = require('client-sessions')
 const config        = require('config')
 
+const _SECRET   = config.get('Session.secret')
+const _DURATION = config.get('Session.duration')
+
 module.exports = () => {
     const app = express()
 
     app.use(sessions({
         cookieName: 'sessao',
-        secret: config.get('Session.secret'),
-        duration: config.get('Session.duration') * 60 * 60 * 1000,
+        secret: _SECRET,
+        duration: _DURATION * 60 * 60 * 1000,
         activeDuration: 5 * 60 * 1000
     }))
     app.use(express.static('./public'))

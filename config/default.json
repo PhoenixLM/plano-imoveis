@@ -13,7 +13,11 @@
     },
 
     "Session": {
-        "secret": "5",         //Escolhido por um d20, garantidamente aleatório
-        "duration": 24
+        "secret": "5",         
+        "duration": 24         
+    },
+
+    "Passwords": {
+        "salt": 10
     }
 }

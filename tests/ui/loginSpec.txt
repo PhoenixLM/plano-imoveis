@@ -1,0 +1,10 @@
+Arquivo: views/login.ejs
+Tipo: HTML5/EJS
+Descrição:
+    O arquivo deve codificar uma página web para que os usuários se autentiquem no 
+    sistema.
+    A página deve conter um formulário a ser enviado para o endereço '/login' de campos
+    'username' e 'password' auto explicativos.
+    A página recebe uma variável 'error' que possuí valor false inicialmente mas recebe o
+    valor true imediatamente após uma tentativa de login mal sucedida, que deve ser usada
+    para exibir uma mensagem de falha de login para o usuário

@@ -1,0 +1,7 @@
+Arquivo: views/admin/painel.ejs
+Tipo: HTML5/EJS
+Descrição:
+    O arquivo deve implementar uma página web com um menu para acessar todas as 
+    funcionalidades de um admin no sistema, incluindo as seguintes rotas:
+        /admin/imoveis/
+        /admin/admins/

@@ -1,0 +1,7 @@
+Arquivo: views/admin/imovel-form.ejs
+Tipo: HTML5/EJS
+Descrição:
+    Esse arquivo deve implemetar uma página web com um formulário a ser submetido
+    ao servidor para criação de um novo imovel no sistema.
+    O formulário deve ser submetido a rota '/admin/imoveis/new' e o nome dos campos
+    deve ser compatível com a schema da coleção mongo 'imovels' (ver tests/models/imovelSpec.js)

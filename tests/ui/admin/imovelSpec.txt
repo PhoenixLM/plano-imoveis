@@ -1,0 +1,9 @@
+Arquivo: views/admin/imovel.ejs
+Tipo: HTML5/EJS
+Descrição:
+    O arquivo deve implementar uma página web que exibe um formulário que deve ser
+    enviado ao servidor com a finalidade de editar um imovel.
+    O formulário deve ser submetido a rota '/admin/imoveis/update/:id' onde :id é o
+    id do imovel a ser editado. A página será renderizada com o parâmetro 'imovel' 
+    disponível contendo todas as informações do imovel a ser editado.
+    O formulário já deve vir preenchido com as informações atuais do imovel

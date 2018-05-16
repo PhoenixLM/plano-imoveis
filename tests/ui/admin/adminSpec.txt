@@ -1,0 +1,10 @@
+Arquivo: views/admin/admin.ejs
+Tipo: HTML5/EJS
+Descrição:
+    O arquivo deve implementar uma página web que exibe um formulário que deve ser
+    enviado ao servidor com a finalidade de editar um admin.
+    O formulário deve ser submetido a rota '/admin/admins/update/:id' onde :id é o
+    id do admin a ser editado. A página será renderizada com o parâmetro 'admin' 
+    disponível contendo todas as informações do admin a ser editado.
+    O formulário já deve vir preenchido com as informações atuais do admin, exceto 
+    password

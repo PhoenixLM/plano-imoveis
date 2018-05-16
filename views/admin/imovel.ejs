@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../includes/header.ejs %>
+    <title>Imovel</title>
+</head>
+<body>
+    <% include ../includes/adminbar.ejs %>
+    <div class="container" style="padding-top: 100px;">
+        <form action="/admin/imoveis/update/<%= imovel._id %>" method="POST">
+            <label for="cep">Cep:</label>
+            <input type="text" name="cep" class="form-control" value="<%= imovel.cep %>">
+            <label for="endereco">Endereço:</label>
+            <input type="text" name="endereco" class="form-control" value="<%= imovel.endereco %>">
+            <label for="valor">Valor:</label>
+            <input type="number" name="valor" class="form-control" value="<%= imovel.valor %>">
+            <label for="condominio">Condominio:</label>
+            <input type="number" name="condominio" class="form-control" value="<%= imovel.condominio %>">
+            <label for="iptu">IPTU:</label>
+            <input type="number" name="iptu" class="form-control" value="<%= imovel.iptu %>">
+            <br>
+            <label>Modalidade:</label>
+            <br>
+            <div class="radio-inline">
+                <label><input type="radio" name="isVenda" id="isVenda" value="true" <%= imovel.isVenda ? 'checked' : ''%> >Venda</label>
+            </div>
+            <div class="radio-inline">
+                <label><input type="radio" name="isVenda" id="isVenda" value="false" <%= imovel.isVenda ? '' : 'checked'%>>Aluguel</label>
+            </div>
+            <br>
+            <br>
+            <label>Oportunidade Única:</label>
+            <br>
+            <div class="radio-inline">
+                <label><input type="radio" name="isOportunidade" id="isOportunidade" value="true" <%= imovel.isOportunidade ? 'checked' : ''%> >Sim</label>
+            </div>
+            <div class="radio-inline">
+                <label><input type="radio" name="isOportunidade" id="isOportunidade" value="false" <%= imovel.isOportunidade ? '' : 'checked'%> >Não</label>
+            </div>
+            <br>
+            <br>
+            <label>Destaque:</label>
+            <br>
+            <div class="radio-inline">
+                <label><input type="radio" name="isDestaque" id="isDestaque" value="true" <%= imovel.isDestaque ? 'checked' : ''%> >Sim</label>
+            </div>
+            <div class="radio-inline">
+                <label><input type="radio" name="isDestaque" id="isDestaque" value="false" <%= imovel.isDestaque ? '' : 'checked'%> >Não</label>
+            </div>
+            <br>
+            <br>
+            <label for="tipo">Tipo:</label>
+            <select name="tipo" class="form-control" id="select_tipo">
+                <option value="apartamento">Apartamento</option>
+                <option value="casa">Casa</option>
+                <option value="casa em condominio">Casa em Condomínio</option>
+                <option value="chacara">Chácara</option>
+                <option value="cobertura">Cobertura</option>
+                <option value="empreendimento">Empreendimento</option>
+                <option value="fazenda">Fazenda</option>
+                <option value="flat">Flat</option>
+                <option value="galpao">Galpão</option>
+                <option value="garagem">Garagem</option>
+                <option value="kitinete">Kitinete</option>
+                <option value="loja">Loja</option>
+                <option value="predio comercial">Prédio Comercial</option>
+                <option value="sala comercial">Sala Comercial</option>
+                <option value="salas conjuntos">Salas/Conjuntos</option>
+                <option value="terreno">Terreno</option>
+                <option value="outros">Outros</option>
+            </select>
+            <label for="procedencia">Procedência: </label>
+            <select name="procedencia" class="form-control" id="select_procedencia">
+                <option value="construcao">Em Construção</option>
+                <option value="novo">Novos / Prontos (1ª venda)</option>
+                <option value="revenda">Pronto Revenda</option>
+            </select>
+            <label for="bairro">Bairro:</label>
+            <% include ../includes/select-bairro.ejs %>
+            <label for="mPrivativo">Metros Privativos:</label>
+            <input type="number" name="mPrivativo" class="form-control" value="<%= imovel.mPrivativo %>" >
+            <label for="mTotal">Metros Total:</label>
+            <input type="number" name="mTotal" class="form-control" value="<%= imovel.mTotal %>">
+            <label for="dormitorios">Dormitorios:</label>
+            <input type="number" name="dormitorios" class="form-control" value="<%= imovel.dormitorios %>">
+            <label for="suites">Suítes:</label>
+            <input type="number" name="suites" class="form-control" value="<%= imovel.suites %>">
+            <label for="banheiros">Banheiros:</label>
+            <input type="number" name="banheiros" class="form-control" value="<%= imovel.banheiros %>">
+            <label for="vagas">Vagas:</label>
+            <input type="number" name="vagas" class="form-control" value="<%= imovel.vagas %>">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Gravar</button>
+            <a class="btn btn-primary" href="/admin/imoveis">Voltar</a>
+        </form>
+    </div>
+</body>
+</html>

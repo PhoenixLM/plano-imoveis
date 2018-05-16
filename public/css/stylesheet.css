@@ -15,18 +15,31 @@ body, html {
     background-size: cover;
 }
 
-.fa {
+.nobg {
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fa-facebook {
     font-size: 40px;
 }
 
 .fa-youtube {
+    font-size: 40px;
     color: #ff0000;
 }
 
 .fa-instagram {
+    font-size: 40px;
     color: #cc7093;
 }
 
 .fa-twitter {
+    font-size: 40px;
     color: #22bde4;
 }

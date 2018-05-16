@@ -11,10 +11,10 @@
     <% include ./includes/navbar.ejs %>
     <!-- Tela de início -->
     <div class="d-flex flex-lg-row flex-column align-items-center justify-content-center bg">
-        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px">Comprar</a>
+        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px" href="/vendas">Comprar</a>
         <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px" href="/alugueis">Alugar</a>
-        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px">Anunciar</a>
-        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px">Área Exclusiva</a>
+        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px" href="/">Anunciar</a>
+        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px" href="/login">Área Exclusiva</a>
     </div>
     <!-- /Tela de início -->
     <!-- Tela inferior -->
@@ -69,5 +69,6 @@
         </div>
     </div>
     <!-- /Modal das mídias sociais -->
+    <% include ./includes/footer.ejs %>
 </body>
 </html>

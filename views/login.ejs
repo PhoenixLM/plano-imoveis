@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ./includes/header.ejs %>
+    <title>Login</title>
+</head>
+<script>
+    $(document).ready(function() {
+        const error = <%= error %>;
+        $('#errorMessage').empty();
+        if(error) {
+            $('#errorMessage').append("Usuário ou senha inválido(s)");
+        }
+    });
+</script>
+<body>
+    <% include ./includes/navbar.ejs %>
+    <div class="d-flex bg align-items-center justify-content-center">
+        <!-- Card de login -->
+        <div class="card">
+            <div class="card-header unique-color lighten-1 white-text">Login</div>
+            <div class="card-body">
+                <!-- login form-->
+                <form target="/login" method="POST">
+                    <!-- input username -->
+                    <label for="defaultFormLoginEmailEx" class="grey-text">Seu usuário</label>
+                    <input type="text" id="defaultFormLoginEmailEx" class="form-control" name="username">
+                    <br>
+                    <!-- input password -->
+                    <label for="defaultFormLoginPasswordEx" class="grey-text">Sua senha</label>
+                    <input type="password" id="defaultFormLoginPasswordEx" class="form-control" name="password">
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                        <p class="red-text" id="errorMessage"></p>
+                    </div>
+                </form>
+                <!-- /login from -->
+            </div>
+        </div>
+        <!-- /Card de login -->
+    </div>
+    <% include ./includes/footer.ejs %>
+</body>
+</html>

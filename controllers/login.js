@@ -17,7 +17,7 @@ module.exports = (app) => {
         Admin.authenticate(username, password, (err, admin) => {
             if(err === null) {
                 req.sessao.userId = admin._id
-                res.render('admin/painel', {admin : admin})
+                res.redirect('admin/painel')
             }
             else res.render('login', {error : true})
         })

@@ -5,7 +5,7 @@ const moveFrom = require('../helpers/moveImgFromTmp')
 
 module.exports = (app) => {
     app.get('/admin/painel', (req, res, next) => {
-        res.render('/admin/painel')
+        res.render('admin/painel')
     })
 
     app.get('/admin/imoveis', (req, res, next) => {

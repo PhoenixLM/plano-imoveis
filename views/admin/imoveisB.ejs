@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../includes/header.ejs %>
+    <title>Imoveis</title>
+</head>
+<script>
+    
+</script>
+<body>
+    <% include ../includes/adminbar.ejs %>
+    <div class="d-flex justify-content-left" style="padding: 100px 20px 20px 20px;">
+        <h1>Imóveis</h1>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="btn btn-primary" href="/admin/imoveis/new"><i class="fa fa-cloud-upload mr-1" aria-hidden="true"></i>Novo Imóvel</a>
+    </div>
+    <div class="d-flex justify-content-center" style="padding: 10px 20px 100px 20px;">
+        <!--Table-->
+        <table class="table" id='imoveisTable'>
+            <!--Table head-->
+            <thead class="blue-grey lighten-4">
+                <tr>
+                    <th>ID</th>
+                    <th>CEP</th>
+                    <th>ENDEREÇO</th>
+                    <th>MODALIDADE</th>
+                    <th>DESTAQUE</th>
+                    <th>OPORTUNIDADE</th>
+                    <th>OPÇÕES</th>
+                </tr>
+            </thead>
+            <!--Table head-->
+            <!--Table body-->
+            <tbody>
+                <% for(var i = 0; i < imovels.length; i++) { %>
+                    <tr>
+                        <td><%= imovels[i]._id %></td>
+                        <td><%= imovels[i].cep %></td>
+                        <td><%= imovels[i].endereco %></td>
+                        <td><%= imovels[i].isVenda ? "VENDA" : "ALUGUEL" %></td>
+                        <td><%= imovels[i].isDestaque ? "DESTAQUE" : "" %></td>
+                        <td><%= imovels[i].isOportunidade ? "OPORTUNIDADE" : "" %></td>
+                        <td><a href="/admin/imoveis/search/<%= imovels[i]._id %>">Editar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/admin/imoveis/delete/<%= imovels[i]._id %>">Deletar</a></td>
+                    </tr>
+                <% } %>
+            </tbody>
+            <!--Table body-->
+        </table>
+        <!--Table-->
+    </div>
+    <% include ../includes/adminfooter.ejs %>
+</body>
+</html>

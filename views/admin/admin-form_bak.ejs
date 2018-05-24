@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../includes/header.ejs %>
+    <title>Novo Admin</title>
+</head>
+<body>
+    <% include ../includes/adminbar.ejs %>
+    <div class="container" style="padding: 100px 20px 20px 20px;">
+        <form action="/admin/admins/new" method="POST">
+            <label for="username">User:</label>
+            <input type="text" name="username" class="form-control">
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="form-control">
+            <label for="conf">Confirme Password:</label>
+            <input type="password" class="form-control">
+            <button type="submit" class="btn btn-primary">Gravar</button>
+            <a class="btn btn-primary" href="/admin/imoveis">Voltar</a>
+        </form>
+    </div>
+    <% include ../includes/adminfooter.ejs %>
+</body>
+</html>

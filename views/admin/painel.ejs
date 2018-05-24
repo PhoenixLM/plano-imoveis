@@ -11,6 +11,7 @@
 </head>
 
 <body class="animsition">
+    <!-- PAGE WRAPPER -->
     <div class="page-wrapper">
         <!-- HEADER DESKTOP-->
         <header class="header-desktop3 d-none d-lg-block">
@@ -24,10 +25,9 @@
                     <div class="header__navbar">
                         <ul class="list-unstyled">
                             <li>
-                                <a href="#">
-                                    <i class="fas fa-tachometer-alt"></i>Dashboard
-                                    <span class="bot-line"></span>
-                                </a>
+                                <a href="./painel">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span class="bot-line"></span>Dashboard</a>
                             </li>
                             <li>
                                 <a href="./imoveis">
@@ -35,12 +35,12 @@
                                     <span class="bot-line"></span>Imóveis</a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="./clientes">
                                     <i class="fas fa-users"></i>
                                     <span class="bot-line"></span>Clientes</a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="./admins">
                                     <i class="fas fa-users"></i>
                                     <span class="bot-line"></span>Administradores</a>
                             </li>
@@ -112,10 +112,9 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
-                            <a href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard
-                                <span class="bot-line"></span>
-                            </a>
+                            <a href="./painel">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span class="bot-line"></span>Dashboard</a>
                         </li>
                         <li>
                             <a href="./imoveis">
@@ -123,12 +122,12 @@
                                 <span class="bot-line"></span>Imóveis</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./clientes">
                                 <i class="fas fa-users"></i>
                                 <span class="bot-line"></span>Clientes</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./admins">
                                 <i class="fas fa-users"></i>
                                 <span class="bot-line"></span>Administradores</a>
                         </li>
@@ -333,57 +332,35 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title-5 m-b-35">últimas vendas</h3>
+                            <h3 class="title-5 m-b-35">últimas vendas/alugueis</h3>
                             <div class="table-responsive table-responsive-data2">
                                 <table class="table table-data2">
                                     <thead>
                                         <tr>
-                                            <th>name</th>
-                                            <th>email</th>
-                                            <th>description</th>
-                                            <th>date</th>
-                                            <th>status</th>
-                                            <th>price</th>
+                                            <th>id</th>
+                                            <th>cep</th>
+                                            <th>endereço</th>
+                                            <th>modalidade</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="tr-shadow">
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">lori@example.com</span>
-                                            </td>
-                                            <td class="desc">Samsung S8 Black</td>
-                                            <td>2018-09-27 02:12</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$679.00</td>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>11111-111</td>
+                                            <td>xxxxxxxxx</td>
+                                            <td>venda</td>
                                         </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">john@example.com</span>
-                                            </td>
-                                            <td class="desc">iPhone X 64Gb Grey</td>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$999.00</td>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>44444-111</td>
+                                            <td>yyyyyy</td>
+                                            <td>aluguel</td>
                                         </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">lyn@example.com</span>
-                                            </td>
-                                            <td class="desc">iPhone X 256Gb Black</td>
-                                            <td>2018-09-25 19:03</td>
-                                            <td>
-                                                <span class="status--denied">Denied</span>
-                                            </td>
-                                            <td>$1199.00</td>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>99999-111</td>
+                                            <td>xzzxzxz</td>
+                                            <td>aluguel</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -407,9 +384,12 @@
                 </div>
             </section>
             <!-- END COPYRIGHT-->
+            
         </div>
+        <!-- END PAGE CONTENT -->
 
     </div>
+    <!-- END PAGE WRAPPER -->
 
     <% include ../includes/scriptPainel.ejs %>
 

@@ -11,6 +11,7 @@
 </head>
 
 <body class="animsition">
+    <!-- PAGE WRAPPER -->
     <div class="page-wrapper">
         <!-- HEADER DESKTOP-->
         <header class="header-desktop3 d-none d-lg-block">
@@ -25,22 +26,21 @@
                         <ul class="list-unstyled">
                             <li>
                                 <a href="./painel">
-                                    <i class="fas fa-tachometer-alt"></i>Dashboard
-                                    <span class="bot-line"></span>
-                                </a>
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span class="bot-line"></span>Dashboard</a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="./imoveis">
                                     <i class="fas fa-users"></i>
                                     <span class="bot-line"></span>Imóveis</a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="./clientes">
                                     <i class="fas fa-users"></i>
                                     <span class="bot-line"></span>Clientes</a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="./admins">
                                     <i class="fas fa-users"></i>
                                     <span class="bot-line"></span>Administradores</a>
                             </li>
@@ -113,22 +113,21 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
                             <a href="./painel">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard
-                                <span class="bot-line"></span>
-                            </a>
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span class="bot-line"></span>Dashboard</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./imoveis">
                                 <i class="fas fa-users"></i>
                                 <span class="bot-line"></span>Imóveis</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./clientes">
                                 <i class="fas fa-users"></i>
                                 <span class="bot-line"></span>Clientes</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./admins">
                                 <i class="fas fa-users"></i>
                                 <span class="bot-line"></span>Administradores</a>
                         </li>
@@ -213,7 +212,7 @@
             <!-- END BREADCRUMB-->
 
             <!-- MAIN CONTENT-->
-            <div class="main-content">
+            <section class="main-content">
 
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
@@ -248,8 +247,8 @@
 
                         <div class="row m-t-25">
                             <div class="table-responsive m-b-40">
+                                <!-- DATA TABLE -->
                                 <table class="table table-borderless table-data3">
-                                    <!--Table head-->
                                     <thead class="blue-grey lighten-4">
                                         <tr>
                                             <th>ID</th>
@@ -261,8 +260,6 @@
                                             <th>OPÇÕES</th>
                                         </tr>
                                     </thead>
-                                    <!--Table head-->
-                                    <!--Table body-->
                                     <tbody>
                                         <% for(var i = 0; i < imovels.length; i++) { %>
                                             <tr>
@@ -276,21 +273,13 @@
                                             </tr>
                                         <% } %>
                                     </tbody>
-                                    <!--Table body-->
                                 </table>
-                            </div>
-                            <!-- END DATA TABLE-->
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 Plano Imóveis.</p>
-                                </div>
+                                <!-- END DATA TABLE-->
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- END MAIN CONTENT-->
 
             <!-- COPYRIGHT-->
@@ -306,10 +295,12 @@
                 </div>
             </section>
             <!-- END COPYRIGHT-->
+
         </div>
         <!-- END PAGE CONTENT -->
 
     </div>
+    <!-- END PAGE WRAPPER -->
 
     <% include ../includes/scriptPainel.ejs %>
 

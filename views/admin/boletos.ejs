@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../includes/header.ejs %>
+    <title>Imovel</title>
+</head>
+<body>
+    <% include ../includes/adminbar.ejs %>
+    <div class="container" style="padding-top: 100px;">
+        <div class="table-data__tool-right">
+            <a href="./boletos/new">
+            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                <i class="zmdi zmdi-plus"></i>novo boleto</button></a>
+        </div>
+        <table class="table table-borderless table-data3">
+            <thead class="blue-grey lighten-4">
+                <tr>
+                    <th>ID</th>
+                    <th>CLIENTE</th>
+                    <th>VENCIMENTO</th>
+                    <th>VALOR</th>
+                    <th>OPÇÕES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < boletos.length; i++) { %>
+                    <tr>
+                        <td><%= boletos[i]._id %></td>
+                        <td><%= boletos[i].pagador %></td>
+                        <td><%= boletos[i].vencimento %></td>
+                        <td><%= boletos[i].valor %></td>
+                        <td><a href="/admin/boletos/search/<%= boletos[i]._id %>">Editar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/admin/boletos/delete/<%= boletos[i]._id %>">Deletar</a></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+

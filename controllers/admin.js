@@ -1,6 +1,7 @@
 const Imovel   = require('../models/imovel')
 const Admin    = require('../models/admin')
 const Cliente  = require('../models/cliente')
+const Boleto   = require('../models/boleto')
 const moveTo   = require('../helpers/moveImgToTmp')
 const moveFrom = require('../helpers/moveImgFromTmp')
 
@@ -189,4 +190,62 @@ module.exports = (app) => {
             })
         })
     })
+
+    /********** CRUD Boletos **********/
+
+    app.get('/admin/boletos', (req, res, next) => {
+        Boleto.find({}, (err, boletos) => {
+            if(err) return next(err)
+            res.render('admin/boletos', {boletos : boletos})
+        })
+    })
+
+    app.get('/admin/boletos/search/:id', (req, res, next) => {
+        let id = req.params.id
+        Boleto.findById(id, (err, boleto) => {
+            if(err) return next(err)
+            if(!boleto) return next()
+            res.render('admin/boleto', {boleto : boleto})
+        })
+    })
+
+    app.get('/admin/boletos/new', (req, res, next) => {
+        res.render('admin/boleto-form')
+    })
+
+    app.post('/admin/boletos/new', (req, res, next) => {
+        let boleto = new Boleto(req.body)
+        boleto.save((err) => {
+            if(err) return next(err)
+            res.redirect('/admin/boletos') 
+        })
+    })
+
+    app.get('/admin/boletos/delete/:id', (req, res, next) => {
+        let id = req.params.id
+        Boleto.findById(id, (err, boleto) => {
+            if(err) return next(err)
+            if(!boleto) return next()
+            boleto.remove((err) => {
+                if(err) return next(err)
+                res.redirect('/admin/boletos')
+            })
+        })
+    })
+
+    app.post('/admin/boletos/update/:id', (req, res, next) => {
+        let id = req.params.id
+        Boleto.findById(id, (err, boleto) => {
+            if(err) return next(err)
+            if(!boleto) return next()
+            console.log(id);
+            console.log(boleto);
+            console.log(req);
+            boleto.set(req.body)
+            boleto.save((err) => {
+                if(err) return next(err)
+                res.redirect('/admin/boletos')
+            })
+        })
+    })    
 }

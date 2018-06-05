@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../includes/header.ejs %>
+    <title>Imovel</title>
+</head>
+<body>
+    <% include ../includes/adminbar.ejs %>
+    <div class="container" style="padding-top: 100px;">
+        <form action="/admin/boletos/update/<%= boleto._id %>" method="POST">
+            <label for="username">Pagador:</label>
+            <input type="text" name="pagador" class="form-control" value="<%= boleto.pagador %>">
+            <label for="username">Vencimento:</label>
+            <input type="text" name="vencimento" class="form-control" value="<%= boleto.vencimento %>">
+            <label for="username">Valor:</label>
+            <input type="text" name="valor" class="form-control" value="<%= boleto.valor %>">
+            <br>
+            <button type="submit" class="btn btn-primary">Gravar</button>
+            <a class="btn btn-primary" href="/admin/boletos">Voltar</a>
+        </form>
+    </div>
+</body>
+</html>

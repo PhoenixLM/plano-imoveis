@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../includes/header.ejs %>
+    <title>Imovel</title>
+</head>
+<body>
+    <% include ../includes/adminbar.ejs %>
+    <div class="container" style="padding-top: 100px;">
+        <form action="/admin/clientes/update/<%= cliente._id %>" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" class="form-control" value="<%= cliente.username %>">
+            <br>
+            <button type="submit" class="btn btn-primary">Gravar</button>
+            <a class="btn btn-primary" href="/admin/clientes">Voltar</a>
+        </form>
+    </div>
+</body>
+</html>

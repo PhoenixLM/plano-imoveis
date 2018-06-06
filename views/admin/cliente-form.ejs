@@ -1,26 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <% include ../includes/header.ejs %>
+
+    <% include ../includes/headerPainel.ejs %>
+
+    <!-- Title Page-->
     <title>Novo Cliente</title>
+
 </head>
-<body>
-    <% include ../includes/adminbar.ejs %>
-    <div class="container" style="padding: 100px 20px 20px 20px;">
-        <form action="/admin/clientes/new" method="POST">
-            <label for="username">User:</label>
-            <input type="text" name="username" class="form-control">
-            <label for="password">Password:</label>
-            <input type="password" name="password" class="form-control">
-            <label for="conf">Confirme Password:</label>
-            <input type="password" class="form-control">
-            <button type="submit" class="btn btn-primary">Gravar</button>
-            <a class="btn btn-primary" href="/admin/clientes">Voltar</a>
-        </form>
+
+<body class="animsition">
+    <!-- PAGE WRAPPER -->
+    <div class="page-wrapper">
+        
+        <% include ../includes/headerMenus.ejs %>
+
+        <!-- PAGE CONTENT-->
+        <div class="page-content--bgf7">
+
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="au-breadcrumb-content">
+                                <div class="au-breadcrumb-left">
+                                    <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                        <li class="list-inline-item active">
+                                            <a href="#">Admin</a>
+                                        </li>
+                                        <li class="list-inline-item seprate">
+                                            <span>/</span>
+                                        </li>
+                                        <li class="list-inline-item">Clientes</li>
+                                        <li class="list-inline-item seprate">
+                                            <span>/</span>
+                                        </li>
+                                        <li class="list-inline-item">Novo Cliente</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END BREADCRUMB-->
+
+            <!-- MAIN CONTENT-->
+            <section class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="table-responsive m-b-40">
+                                
+
+                                <!-- CONTAINER -->
+                                <div class="container">
+                                    <form action="/admin/clientes/new" method="POST">
+                                        <label for="username">User:</label>
+                                        <input type="text" name="username" class="form-control">
+                                        <label for="password">Password:</label>
+                                        <input type="password" name="password" class="form-control">
+                                        <label for="conf">Confirme Password:</label>
+                                        <input type="password" class="form-control">
+                                        <button type="submit" class="btn btn-primary">Gravar</button>
+                                        <a class="btn btn-primary" href="/admin/clientes">Voltar</a>
+                                    </form>
+                                </div>
+                                <!-- END CONTAINER -->
+
+
+
+
+                            </div>
+                            <!-- END DATA TABLE-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END MAIN CONTENT-->
+
+            <!-- COPYRIGHT-->
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Pleno Imóveis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END COPYRIGHT-->
+        </div>
+        <!-- END PAGE CONTENT -->
+
     </div>
-    <% include ../includes/adminfooter.ejs %>
+    <!-- END PAGE WRAPPER -->
+
+    <% include ../includes/scriptPainel.ejs %>
+
 </body>
-</html>

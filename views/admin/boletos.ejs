@@ -1,44 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <% include ../includes/header.ejs %>
-    <title>Imovel</title>
+
+    <% include ../includes/headerPainel.ejs %>
+
+    <!-- Title Page-->
+    <title>Boletos</title>
+
 </head>
-<body>
-    <% include ../includes/adminbar.ejs %>
-    <div class="container" style="padding-top: 100px;">
-        <div class="table-data__tool-right">
-            <a href="./boletos/new">
-            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                <i class="zmdi zmdi-plus"></i>novo boleto</button></a>
+
+<body class="animsition">
+    <!-- PAGE WRAPPER -->
+    <div class="page-wrapper">
+        
+        <% include ../includes/headerMenus.ejs %>
+
+        <!-- PAGE CONTENT-->
+        <div class="page-content--bgf7">
+
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="au-breadcrumb-content">
+                                <div class="au-breadcrumb-left">
+                                    <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                        <li class="list-inline-item active">
+                                            <a href="#">Admin</a>
+                                        </li>
+                                        <li class="list-inline-item seprate">
+                                            <span>/</span>
+                                        </li>
+                                        <li class="list-inline-item">Boletos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END BREADCRUMB-->
+
+            <!-- MAIN CONTENT-->
+            <section class="main-content">
+
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+
+                        <div class="table-data__tool">
+                            <div class="table-data__tool-left">
+                                <div class="rs-select2--light rs-select2--md">
+                                    <select class="js-select2" name="property">
+                                        <option selected="selected">All Properties</option>
+                                        <option value="">Option 1</option>
+                                        <option value="">Option 2</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <div class="rs-select2--light rs-select2--sm">
+                                    <select class="js-select2" name="time">
+                                        <option selected="selected">Today</option>
+                                        <option value="">3 Days</option>
+                                        <option value="">1 Week</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <button class="au-btn-filter">
+                                    <i class="zmdi zmdi-filter-list"></i>filtrar</button>
+                            </div>
+                            <div class="table-data__tool-right">
+                                <a href="./boletos/new">
+                                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                    <i class="zmdi zmdi-plus"></i>novo boleto</button></a>
+                            </div>
+                        </div>
+
+                        <div class="row m-t-25">
+                            <div class="table-responsive m-b-40">
+                                <!-- DATA TABLE -->
+                                <table class="table table-borderless table-data3">
+                                    <thead class="blue-grey lighten-4">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>CLIENTE</th>
+                                            <th>VENCIMENTO</th>
+                                            <th>VALOR</th>
+                                            <th>OPÇÕES</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i = 0; i < boletos.length; i++) { %>
+                                            <tr>
+                                                <td><%= boletos[i]._id %></td>
+                                                <td><%= boletos[i].id_cliente %></td>
+                                                <td><%= boletos[i].vencimento %></td>
+                                                <td><%= boletos[i].valor %></td>
+                                                <td><a href="/admin/boletos/search/<%= boletos[i]._id %>">Editar</a>
+                                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <a href="/admin/boletos/delete/<%= boletos[i]._id %>">Deletar</a>
+                                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <a href="/admin/boletos/file/<%= boletos[i]._id %>">Ver Boleto</a></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                                <!-- END DATA TABLE-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END MAIN CONTENT-->
+
+            <!-- COPYRIGHT-->
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Pleno Imóveis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END COPYRIGHT-->
+
         </div>
-        <table class="table table-borderless table-data3">
-            <thead class="blue-grey lighten-4">
-                <tr>
-                    <th>ID</th>
-                    <th>CLIENTE</th>
-                    <th>VENCIMENTO</th>
-                    <th>VALOR</th>
-                    <th>OPÇÕES</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for(var i = 0; i < boletos.length; i++) { %>
-                    <tr>
-                        <td><%= boletos[i]._id %></td>
-                        <td><%= boletos[i].pagador %></td>
-                        <td><%= boletos[i].vencimento %></td>
-                        <td><%= boletos[i].valor %></td>
-                        <td><a href="/admin/boletos/search/<%= boletos[i]._id %>">Editar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/admin/boletos/delete/<%= boletos[i]._id %>">Deletar</a></td>
-                    </tr>
-                <% } %>
-            </tbody>
-        </table>
+        <!-- END PAGE CONTENT -->
+
     </div>
+    <!-- END PAGE WRAPPER -->
+
+    <% include ../includes/scriptPainel.ejs %>
+
 </body>
-</html>
-
-

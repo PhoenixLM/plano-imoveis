@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../includes/header.ejs %>
+    <title>Novo Cliente</title>
+</head>
+<body>
+    <% include ../includes/adminbar.ejs %>
+    <div class="container" style="padding: 100px 20px 20px 20px;">
+        <form action="/admin/boletos/new" method="POST">
+            <label for="username">Pagador:</label>
+            <input type="text" name="pagador" class="form-control">
+            <label for="username">Vencimento:</label>
+            <input type="text" name="vencimento" class="form-control">
+            <label for="username">Valor:</label>
+            <input type="text" name="valor" class="form-control">
+            <br>
+            <button type="submit" class="btn btn-primary">Gravar</button>
+            <a class="btn btn-primary" href="/admin/boletos">Voltar</a>
+        </form>
+    </div>
+    <% include ../includes/adminfooter.ejs %>
+</body>
+</html>

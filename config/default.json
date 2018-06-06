@@ -1,0 +1,23 @@
+{
+    "Server": {
+        "host": "localhost",
+        "port": "3001"
+    },
+
+    "Mongo": {
+        "host": "localhost",
+        "port": "27017",
+        "db"  : "test",
+        "user": "",
+        "pswd": ""
+    },
+
+    "Session": {
+        "secret": "5",         
+        "duration": 24         
+    },
+
+    "Passwords": {
+        "salt": 10
+    }
+}

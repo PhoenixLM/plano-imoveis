@@ -1,0 +1,122 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+       <div class="container">
+              <img src="images/logoplano.png" alt="">
+          <a class="navbar-brand js-scroll-trigger" href="/" style="margin-left:3%;">Plano Imóveis</a>
+          
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="">Quem somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="">Nossa franquia virtual</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="">Seja nosso corretor associado</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <header class="masthead1 text-center text-white d-flex">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <h1 class="text-uppercase">
+              </h1>
+  
+              <section class="bg-primary" id="about">
+                <div class="container">
+                  
+                        <div class="row">
+                            <div class="container-fluid" style="padding: 100px 10px 10px 10px" >
+                                <div class="column" style="padding: 0 0 0 120px col-xs-6 .col-md-4" >
+                                    <h1 class="display-2 stylish-text" style="color:black" >Locação</h1>
+                                    <p class="white-text">Faça aqui sua pesquisa de aluguel</p>
+                                </div>
+                                <div class="row form-group" style="padding: 20px 0 0 120px">
+                                    <div class="col-3">
+                                    <label for="tipo" class="white-text">Tipo de Imóvel:&nbsp;&nbsp;&nbsp;</label>
+                                    <select name="tipo" class="form-control" id="select_tipo" width="30px">
+                                        <option value="null" selected>Todos</option>
+                                        <option value="apartamento">Apartamento</option>
+                                        <option value="casa">Casa</option>
+                                        <option value="casa em condominio">Casa em Condomínio</option>
+                                        <option value="chacara">Chácara</option>
+                                        <option value="cobertura">Cobertura</option>
+                                        <option value="empreendimento">Empreendimento</option>
+                                        <option value="fazenda">Fazenda</option>
+                                        <option value="flat">Flat</option>
+                                        <option value="galpao">Galpão</option>
+                                        <option value="garagem">Garagem</option>
+                                        <option value="kitinete">Kitinete</option>
+                                        <option value="loja">Loja</option>
+                                        <option value="predio comercial">Prédio Comercial</option>
+                                        <option value="sala comercial">Sala Comercial</option>
+                                        <option value="salas conjuntos">Salas/Conjuntos</option>
+                                        <option value="terreno">Terreno</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                    </div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <div class="col-3">
+                                    <label for="bairro" class="text-white">Bairro:&nbsp;&nbsp;&nbsp;</label>
+                                    <select name="bairro" class="form-control" id="select_bairro">
+                                        <option value="null" selected>Todos</option>
+                                        <option value="aguas claras">Aguas Claras</option>
+                                        <option value="asa norte">Asa Norte</option>
+                                        <option value="asa sul">Asa Sul</option>
+                                        <option value="brazlandia">Brazlândia</option>
+                                        <option value="ceilandia">Ceilândia</option>
+                                        <option value="centro">Centro</option>
+                                        <option value="cruzeiro">Cruzeiro</option>
+                                        <option value="cruzeiro novo">Cruzeiro Novo</option>
+                                        <option value="lago norte">Lago Norte</option>
+                                        <option value="lago sul">Lago Sul</option>
+                                        <option value="ponta negra">Ponta Negra</option>
+                                        <option value="samambaia">Samambaia</option>
+                                        <option value="samambaia norte">Samambaia Norte</option>
+                                        <option value="apartamento">Apartamento</option>
+                                        <option value="santa maria">Santa Maria</option>
+                                        <option value="shin">Setor de Habitações Individuais Norte</option>
+                                        <option value="apartamento">Apartamento</option>
+                                        <option value="smpw">Setor de Mansões Park Way</option>
+                                        <option value="setor fumal">Setor Fumal</option>
+                                        <option value="shvp">Setor Habitacional Vincente Pires</option>
+                                        <option value="noroeste">Setor Noroeste</option>
+                                        <option value="sudoeste">Setor Sudoeste</option>
+                                        <option value="sig">SIG</option>
+                                        <option value="sobradinho">Sobradinho</option>
+                                        <option value="taguatinga">Taguatinga</option>
+                                        <option value="vicente pires">Vicente Pires</option>
+                                        <option value="vila planalto">Vila Planalto</option>
+                                        <option value="zona industrial">Zona Industrial</option>
+                                    </select>
+                                    </div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <div class="col-3">
+                                    <label for="preco" class="white-text">Preço Máximo:&nbsp;&nbsp;&nbsp;</label>
+                                    <input type="number" class="form-control" id="number_preco" placeholder="Todos">
+                                    </div>
+                                </div>
+                                <div class="row" style="padding: 20px 0 0 120px">
+                                    <button type="button" class="btn btn-success" id="btn_pesquisar" onclick="search();">Pesquisar</button>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAvisarAnuncio">Cadastrar email para novos anuncios de Alugueis</button>
+                                </div>
+                          <div class="col-lg-10 mx-auto">
+                            <h1 class="text-uppercase">
+                            </h1>
+            
+            
+                  </div>
+                </div>
+              </section>
+      
+      
+  
+    
+  

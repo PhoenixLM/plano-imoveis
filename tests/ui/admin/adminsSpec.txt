@@ -1,0 +1,12 @@
+Arquivo: views/admin/admins.ejs
+Tipo: HTML5/EJS
+Descrição:
+    O arquivo deve implementar uma tabela com informações de todos os admins
+    (omitir passwords) além de botões para editar e deletar cada entrada da 
+    tabela. A página é renderizada com um parâmetro "admins" disponível 
+    que é um array contendo todos os admins do sistema.
+    A rota para editar um admin é /admin/admins/search/:id
+    A rota para deletar um admin é /admin/admins/delete/:id
+
+    A página deve também linkar para a página de criação de um novo admin
+    em /admin/admins/new

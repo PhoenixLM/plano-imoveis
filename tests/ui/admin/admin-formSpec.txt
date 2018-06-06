@@ -1,0 +1,7 @@
+Arquivo: views/admin/admin-form.ejs
+Tipo: HTML5/EJS
+Descrição:
+    Esse arquivo deve implemetar uma página web com um formulário a ser submetido
+    ao servidor para criação de um novo admin no sistema.
+    O formulário deve ser submetido a rota '/admin/admins/new' e o nome dos campos
+    deve ser compatível com a schema da coleção mongo 'admins' (ver tests/models/adminSpec.js)

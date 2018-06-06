@@ -29,4 +29,4 @@ module.exports = () => {
     load('controllers').into(app)
 
     return app
-}
+}  

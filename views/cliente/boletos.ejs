@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ../includes/header.ejs %>
+    <title>Imovel</title>
+</head>
+<body>
+    <% include ../includes/adminbar.ejs %>
+    <div class="container" style="padding-top: 100px;">
+        <table class="table table-borderless table-data3">
+            <thead class="blue-grey lighten-4">
+                <tr>
+                    <th>ID</th>
+                    <th>VENCIMENTO</th>
+                    <th>VALOR</th>
+                    <th>OPÇÕES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < boletos.length; i++) { %>
+                    <tr>
+                        <td><%= boletos[i]._id %></td>
+                        <td><%= boletos[i].vencimento %></td>
+                        <td><%= boletos[i].valor %></td>
+                        <td><a href="/cliente/boletos/file/<%= boletos[i]._id %>">Ver Boleto</a></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+

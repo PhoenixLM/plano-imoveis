@@ -102,24 +102,23 @@
     <!-- Your code to create an instance of Fine Uploader and bind to the DOM/template
     ====================================================================== -->
     <script>
-        var manualUploader = new qq.FineUploader({
+        var manualUploaderBoletos = new qq.FineUploader({
             element: document.getElementById('fine-uploader-manual-trigger'),
             template: 'qq-template-manual-trigger',
             request: {
-                endpoint: '/admin/media'
-            },
-            thumbnails: {
-                placeholders: {
-                    waitingPath: '/source/placeholders/waiting-generic.png',
-                    notAvailablePath: '/source/placeholders/not_available-generic.png'
-                }
+                endpoint: '/admin/uploadBoleto'
             },
             autoUpload: false,
-            debug: true
+            debug: true,
+            callbacks: {
+                onError: function(id, name, errorReason, xhrOrXdr) {
+                    alert(qq.format("Error on file number {} - {}.  Reason: {}", id, name, errorReason));
+                }
+            }
         });
 
         qq(document.getElementById("trigger-upload")).attach("click", function() {
-            manualUploader.uploadStoredFiles();
+            manualUploaderBoletos.uploadStoredFiles();
         });
     </script>
 </body>

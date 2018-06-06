@@ -1,4 +1,5 @@
 const Admin = require('../models/admin')
+const Cliente = require('../models/cliente')
 
 module.exports = (app) => {
     app.get('/login', (req, res, next) => {
@@ -19,7 +20,15 @@ module.exports = (app) => {
                 req.sessao.userId = admin._id
                 res.redirect('admin/painel')
             }
-            else res.render('login', {error : true})
+            else {
+                Cliente.authenticate(username, password, (err, cliente) => {
+                    if(err === null) {
+                        req.sessao.userId = cliente._id
+                        res.redirect('cliente/painel')
+                    }
+                    else res.render('login', {error : true})
+                })
+            }
         })
     })
 }

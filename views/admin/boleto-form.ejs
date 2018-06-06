@@ -11,25 +11,17 @@
     <% include ../includes/adminbar.ejs %>
     <div class="container" style="padding: 100px 20px 20px 20px;">
         <form action="/admin/boletos/new" method="POST">
-            <label for="select_cliente">Cliente: </label>
-            <select name="id_cliente" class="form-control" id="select_cliente">
-            <% for(var i = 0; i < clientes.length; i++) { %>
-                <option value="<%= clientes[i]._id %>"><%= clientes[i].username %></option>
-            <% } %>
-            </select>
-            <label for="descricao">Descrição:</label>
-            <input type="text" name="descricao" class="form-control">
+            <label for="username">Pagador:</label>
+            <input type="text" name="pagador" class="form-control">
             <label for="username">Vencimento:</label>
             <input type="text" name="vencimento" class="form-control">
             <label for="username">Valor:</label>
             <input type="text" name="valor" class="form-control">
             <br>
-            <% include ../includes/fineuploader_boleto.ejs %>
-            <br>
             <button type="submit" class="btn btn-primary">Gravar</button>
             <a class="btn btn-primary" href="/admin/boletos">Voltar</a>
         </form>
-
     </div>
+    <% include ../includes/adminfooter.ejs %>
 </body>
 </html>

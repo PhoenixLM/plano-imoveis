@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ./includes/header.ejs %>
+    <title>Plano Imóveis</title>
+</head>
+<body>
+    <% include ./includes/navbar.ejs %>
+    <!-- Tela de início -->
+    <div class="d-flex flex-lg-row flex-column align-items-center justify-content-center bg">
+        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px" href="/vendas">Comprar</a>
+        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px" href="/alugueis">Alugar</a>
+        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px" href="/">Anunciar</a>
+        <a class="btn btn-lg btn-outline-light-blue waves-effect" style="width: 200px" href="/login">Área Exclusiva</a>
+    </div>
+    <!-- /Tela de início -->
+    <!-- Tela inferior -->
+    <div class="d-flex flex-lg-row flex-column justify-content-center" style="padding: 20px; background-color: #dddddd">
+            <div style="flex-grow: 4" class="flex-column">
+                    <h1>Institucional</h1>
+                    <h3>Atendimento exclusivo</h3>
+                    <ul>
+                        <li>Avaliamos seu imóvel</li>
+                        <li>Quero alugar</li>
+                        <li>Quero vender</li>
+                        <li>Simule seu financiamento</li>
+                        <li>Private brokers</li>
+                        <li>Sobre a Plano</li>
+                        <li>Trabalhe conosco</li>
+                        <li>Dúvidas e sugestões</li>
+                        <li>Taxas e honorários de serviços</li>
+                    </ul>
+                </div>
+    
+        <div style="flex-grow: 8; text-align: right" class="flex-column">
+            <h1>Acompanhe-nos nas redes sociais</h1>
+            <div class="flex-row">
+                <a href="#" class="fa fa-facebook"  style="padding: 15px"></a>
+                <a href="#" class="fa fa-youtube"   style="padding: 15px"></a>
+                <a href="#" class="fa fa-instagram" style="padding: 15px"></a>
+                <a href="#" class="fa fa-twitter"   style="padding: 15px"></a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#midias-modal">
+                Entre em contanto com gente
+            </button>
+        </div>
+    </div>
+    <!-- /Tela inferior -->
+    <!-- Modal das mídias sociais -->
+    <div class="modal fade right" id="midias-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-side modal-bottom-right" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Fale com a gente:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Nosso WhatsApp (61) 99000-0000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal das mídias sociais -->
+    <% include ./includes/footer.ejs %>
+</body>
+</html>

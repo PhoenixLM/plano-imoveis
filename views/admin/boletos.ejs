@@ -29,14 +29,10 @@
                 <% for(var i = 0; i < boletos.length; i++) { %>
                     <tr>
                         <td><%= boletos[i]._id %></td>
-                        <td><%= boletos[i].id_cliente %></td>
+                        <td><%= boletos[i].pagador %></td>
                         <td><%= boletos[i].vencimento %></td>
                         <td><%= boletos[i].valor %></td>
-                        <td><a href="/admin/boletos/search/<%= boletos[i]._id %>">Editar</a>
-                            &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="/admin/boletos/delete/<%= boletos[i]._id %>">Deletar</a>
-                            &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="/admin/boletos/file/<%= boletos[i]._id %>">Ver Boleto</a></td>
+                        <td><a href="/admin/boletos/search/<%= boletos[i]._id %>">Editar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/admin/boletos/delete/<%= boletos[i]._id %>">Deletar</a></td>
                     </tr>
                 <% } %>
             </tbody>

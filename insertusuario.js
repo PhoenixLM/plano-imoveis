@@ -1,9 +1,9 @@
-/* const Admin = require('./models/admin');
+const Admin = require('./models/admin');
 var novo = new Admin({
     username: 'admin',
     password: 'admin'
 });
-novo.save(); */
+novo.save(); 
 
 const Cliente = require ('./models/cliente');
 var novo = new Cliente({

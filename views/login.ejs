@@ -9,7 +9,7 @@
 </head>
 <script>
     $(document).ready(function() {
-        const error = <%= error %>;
+        //const error = <%= error %>;
         $('#errorMessage').empty();
         if(error) {
             $('#errorMessage').append("Usuário ou senha inválido(s)");
@@ -17,7 +17,7 @@
     });
 </script>
 <body>
-    <% include ./includes/navbar.ejs %>
+    <% include ./includes/navbarindex.ejs %>
     <div class="d-flex bg align-items-center justify-content-center">
         <!-- Card de login -->
         <div class="card">

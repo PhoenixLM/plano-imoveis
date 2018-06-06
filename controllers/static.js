@@ -10,4 +10,8 @@ module.exports = (app) => {
     app.get('/alugueis', (req, res, next) => {
         res.render('alugueis')
     })
+
+    app.get('/textpesquisa', (req, res, next) => {
+        res.render('textpesquisa')
+    })
 }

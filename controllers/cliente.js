@@ -11,5 +11,10 @@ module.exports = (app) => {
             res.render('cliente/boletos', {boletos : boletos})
         })
     })
+
+    app.get('/cliente/boletos/file/:id', (req, res, next) => {
+        let tempFile="./public/boletos/"+req.params.id+"/boleto.pdf"
+        res.download(tempFile)
+    })
 }
 

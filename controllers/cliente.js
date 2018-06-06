@@ -1,5 +1,4 @@
-const Imovel   = require('../models/imovel')
-const Admin    = require('../models/cliente')
+const Boleto   = require('../models/boleto')
 
 module.exports = (app) => {
     app.get('/cliente/painel', (req, res, next) => {
@@ -7,7 +6,10 @@ module.exports = (app) => {
     })
 
     app.get('/cliente/boletos', (req, res, next) => {
-        res.render('cliente/boletos')
+        Boleto.find({id_cliente : req.sessao.userId}, (err, boletos) => {
+            if(err) return next(err)
+            res.render('cliente/boletos', {boletos : boletos})
+        })
     })
 }
 

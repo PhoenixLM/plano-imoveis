@@ -1,9 +1,11 @@
-const Imovel   = require('../models/imovel')
-const Admin    = require('../models/admin')
-const Cliente  = require('../models/cliente')
-const Boleto   = require('../models/boleto')
-const moveTo   = require('../helpers/moveImgToTmp')
-const moveFrom = require('../helpers/moveImgFromTmp')
+const Imovel    = require('../models/imovel')
+const Admin     = require('../models/admin')
+const Cliente   = require('../models/cliente')
+const Boleto    = require('../models/boleto')
+const moveTo    = require('../helpers/moveImgToTmp')
+const moveFrom  = require('../helpers/moveImgFromTmp')
+const moveBTo   = require('../helpers/moveBoletoToTmp')
+const moveBFrom = require('../helpers/moveBoletoFromTmp')
 
 module.exports = (app) => {
     app.get('/admin/painel', (req, res, next) => {
@@ -13,6 +15,17 @@ module.exports = (app) => {
     app.post('/admin/media', (req, res, next) => {
         if(req.files.qqfile) {
             moveTo(req, (err) => {
+                if(err) res.send({'success': false})
+                else res.send({'success': true})
+            })
+        } else {
+            res.send('Erro, nenhum arquivo no body da request')
+        }
+    })
+
+    app.post('/admin/uploadBoleto', (req, res, next) => {
+        if(req.files.qqfile) {
+            moveBTo(req, (err) => {
                 if(err) res.send({'success': false})
                 else res.send({'success': true})
             })
@@ -210,13 +223,19 @@ module.exports = (app) => {
     })
 
     app.get('/admin/boletos/new', (req, res, next) => {
-        res.render('admin/boleto-form')
+        Cliente.find({}, (err, clientes) => {
+            if(err) return next(err)
+            res.render('admin/boleto-form', {clientes : clientes})
+        })
     })
 
     app.post('/admin/boletos/new', (req, res, next) => {
         let boleto = new Boleto(req.body)
         boleto.save((err) => {
             if(err) return next(err)
+            moveBFrom(req, boleto._id, (err) => {
+                if(err) return next(err)
+            })
             res.redirect('/admin/boletos') 
         })
     })
@@ -238,14 +257,16 @@ module.exports = (app) => {
         Boleto.findById(id, (err, boleto) => {
             if(err) return next(err)
             if(!boleto) return next()
-            console.log(id);
-            console.log(boleto);
-            console.log(req);
             boleto.set(req.body)
             boleto.save((err) => {
                 if(err) return next(err)
                 res.redirect('/admin/boletos')
             })
         })
-    })    
+    })
+    
+    app.get('/admin/boletos/file/:id', (req, res, next) => {
+        let tempFile="./public/boletos/"+req.params.id+"/boleto.pdf"
+        res.download(tempFile)
+    })
 }

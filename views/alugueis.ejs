@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <% include ./includes/headerindex.ejs %>
+    <% include ./includes/header.ejs %>
     <link rel="stylesheet" href="/css/stylesheet.css">
     <title>Alugar</title>
-    
 </head>
 <script>
     var procedencia = 'null';
@@ -99,27 +98,91 @@
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
         $(".radioGroup").click(function () {
-            $(".radioGroup").removeClass("active")
+            $(".radioGroup").removeClass("active");
             $(this).addClass("active");
             procedencia = event.target.id;
             search();
         });
     });
-
 </script>
 <body>
-        <% include ./includes/navbarpesquisa.ejs %>
-
-
-
-
-        
-    
-        <!-- Modal AvisoDeAnuncio -->
-        <% include ./includes/avisarAnuncio.ejs %>
-        <!-- Fim Modal AvisoDeAnuncio -->
+   
+    <div class="bg" style="padding: 100px 10px 10px 10px">
+        <div class="column" style="padding: 0 0 0 120px">
+          <h1 class="display-2 stylish-text">Locação</h1>
+            <p class="">Faça aqui sua pesquisa de aluguel</p>
+        </div>
+        <div class="row form-group" style="padding: 20px 0 0 120px">
+            <div class="col-3">
+            <label for="tipo" class="">Tipo de Imóvel:&nbsp;&nbsp;&nbsp;</label>
+            <select name="tipo" class="form-control" id="select_tipo" width="30px">
+                <option value="null" selected>Todos</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="casa">Casa</option>
+                <option value="casa em condominio">Casa em Condomínio</option>
+                <option value="chacara">Chácara</option>
+                <option value="cobertura">Cobertura</option>
+                <option value="empreendimento">Empreendimento</option>
+                <option value="fazenda">Fazenda</option>
+                <option value="flat">Flat</option>
+                <option value="galpao">Galpão</option>
+                <option value="garagem">Garagem</option>
+                <option value="kitinete">Kitinete</option>
+                <option value="loja">Loja</option>
+                <option value="predio comercial">Prédio Comercial</option>
+                <option value="sala comercial">Sala Comercial</option>
+                <option value="salas conjuntos">Salas/Conjuntos</option>
+                <option value="terreno">Terreno</option>
+                <option value="outros">Outros</option>
+            </select>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="col-3">
+            <label for="bairro" class="">Bairro:&nbsp;&nbsp;&nbsp;</label>
+            <select name="bairro" class="form-control" id="select_bairro">
+                <option value="null" selected>Todos</option>
+                <option value="aguas claras">Aguas Claras</option>
+                <option value="asa norte">Asa Norte</option>
+                <option value="asa sul">Asa Sul</option>
+                <option value="brazlandia">Brazlândia</option>
+                <option value="ceilandia">Ceilândia</option>
+                <option value="centro">Centro</option>
+                <option value="cruzeiro">Cruzeiro</option>
+                <option value="cruzeiro novo">Cruzeiro Novo</option>
+                <option value="lago norte">Lago Norte</option>
+                <option value="lago sul">Lago Sul</option>
+                <option value="ponta negra">Ponta Negra</option>
+                <option value="samambaia">Samambaia</option>
+                <option value="samambaia norte">Samambaia Norte</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="santa maria">Santa Maria</option>
+                <option value="shin">Setor de Habitações Individuais Norte</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="smpw">Setor de Mansões Park Way</option>
+                <option value="setor fumal">Setor Fumal</option>
+                <option value="shvp">Setor Habitacional Vincente Pires</option>
+                <option value="noroeste">Setor Noroeste</option>
+                <option value="sudoeste">Setor Sudoeste</option>
+                <option value="sig">SIG</option>
+                <option value="sobradinho">Sobradinho</option>
+                <option value="taguatinga">Taguatinga</option>
+                <option value="vicente pires">Vicente Pires</option>
+                <option value="vila planalto">Vila Planalto</option>
+                <option value="zona industrial">Zona Industrial</option>
+            </select>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="col-3">
+            <label for="preco" class="">Preço Máximo:&nbsp;&nbsp;&nbsp;</label>
+            <input type="number" class="form-control" id="number_preco" placeholder="Todos">
+            </div>
+        </div>
+        <div class="row" style="padding: 20px 0 0 120px">
+            <button type="button" class="btn btn-success" id="btn_pesquisar" onclick="search();">Pesquisar</button>
+        </div>
     </div>        
     <div id="searchResults" class="d-flex flex-wrap justify-content-center" style="padding:5px">
     </div>
+    <% include ./includes/footer.ejs %>
 </body>
 </html>

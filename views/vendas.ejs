@@ -102,6 +102,8 @@
     }
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
+        searchDestaques();
+        searchOportunidades();
         $(".radioGroup").click(function () {
             $(".radioGroup").removeClass("active");
             $(this).addClass("active");
@@ -111,8 +113,7 @@
     });
 </script>
 <body>
-    <% include ./includes/navbar.ejs %>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
     <div class="bg" style="padding: 100px 10px 10px 10px">
         <div class="column" style="padding: 0 0 0 120px">
             <h1 class="display-2 stylish-text">Vendas</h1>

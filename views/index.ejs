@@ -1,86 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plano Imóveis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <% include includes/header %>
-<style>
+<script>
+    $(document).ready(function(){
+        $('#menuContatos-arrow-right').css('display','none');
 
-     .fundologo{
-  background: linear-gradient(to top, transparent, #979696, transparent);
-  float:left;
+        $('#menuContatos-arrow-left').click(function() {
+            $('#menuContatos').animate({right: 0});
+            $('#menuContatos-arrow-right').css('display','inline');
+            $('#menuContatos-arrow-left').css('display','none');
+        });
+        
+        $('#menuContatos-arrow-right').click(function() {
+            $('#menuContatos').animate({right: "-890px"});
+            $('#menuContatos-arrow-right').css('display','none');
+            $('#menuContatos-arrow-left').css('display','inline');
+        });
+    });
+</script>
+
+<style>
+    body{
+        background-color:rgb(131, 131, 131);
+    }
+    .fundologo{
+        background: linear-gradient(to top, transparent, #979696, transparent);
+        float:left;
     }
     #fundologo{
-  background: linear-gradient(to bottom, #979696, transparent,#979696);
-  width: 15%;
+        background: linear-gradient(to bottom, #979696, transparent,#979696);
+        width: 15%;
     }
     #fundologo1{
-  background: linear-gradient(to top, transparent, #979696, transparent);
-  width: 18%;
+        background: linear-gradient(to top, transparent, #979696, transparent);
+        width: 18%;
     }
-  #fundobg{
-    background-image:url("images/bsb2.jpg");
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    
-  }
-  #colortext{
-    color:white;  
-  }
-  .gradient-buttons .btn {
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 49%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
-    background-repeat: repeat-x;
-}
+    #fundobg{
+        background-image:url("images/bsb2.jpg");
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+    }
+    #colortext{
+        color:white;  
+    }
+    .gradient-buttons .btn {
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 49%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
+        background-repeat: repeat-x;
+    }
+    .card {
+        margin: 10px;
+        box-shadow: 0 5px 10px -2.5px;
+    }
+    .plano-btn-index{
+        border:1px solid white;
+        background: linear-gradient(to bottom, transparent , #858585 ,transparent);
+        height:90px;
+        width:250px;
+        margin:5px;
+        color:black;
+        font-weight:bold;
+        font-size:30px;
+    }
+    .Infoscolor{
+        position: absolute;
+        width: 100%;
+        height:500px;
+    }
+    #Mid{
+        margin-top:10%;
+    }
+    .Barra{
+        border-radius: 5px;
+        height: 25px;
+        width:100%;
+        background-color:#d4d4d4;
+        margin-top:30%;
+    }
+    .executivo{
+        margin-top:2%;
+        margin-left:1%;
+        height:455px;
+        width: 300px;
+        background-color:#aeafb1;
+        font-family: Arial, Helvetica, sans-serif;
+        border:solid 5px white;
+        float:left;
+    }
+    .bold50{
+        font-weight: bold;
+        font-size:50px;
+    }
+    .bold{
+        font-weight: bold;
+    }
+    .exec{
+        color:black;
+    }
+    .centerp{
+        margin-top:20%;
+    }
+    .checkInfo{
+        float:left;
+        margin-top:2%;
+    }
+    .social{
+        margin-top:2%;
+        background:linear-gradient(to bottom, transparent , #cfcfcf ,transparent);
+    }
+    /*ICONES REDES SOCIAIS */
+    .btn-circle.btn-lg {
+        width: 50px;
+        height: 50px;
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 25px;
+    }
+    .fa-twitter{
+        color:white;
+    }
+    .fa-instagram{
+        color:white;
+    }
+    .ButtonText{
+        color:#fff;
+        font-size:25px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    /*CSS DO MENU*/
+    #menuContatos-arrow-left, #menuContatos-arrow-right {
+        font-size: 60px;
+    }
+    #menuContatos {
+        position: fixed;
+        bottom: 0;
+        right: -890px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #fff;
+    }
+    #menuContatos ul li {
+        display: block;
+        background: linear-gradient(to top, transparent, #fda707c7, transparent);
+        margin: 0 5px;
+        padding: 5px;
+    }
+    #menuContatos .nav-item span {
+        font-size: 30px;
+    }
 
-.card {
-  margin: 10px;
-  box-shadow: 0 5px 10px -2.5px;
-}
-.plano-btn-index{
-  border:1px solid white;
-  background: linear-gradient(to bottom, transparent , #979696 ,transparent);
-  height:70px;
-  width:220px;
-  margin:5px;
-  color:black;
-  font-weight:bold;
-  font-size:30px;
-}
 </style>
 
 <body>
-    <body class="text-center" id="fundobg">
+    <!--FUNDO BG-->
+    <div class="text-center" id="fundobg">
 
+        <!--HEADER-->
         <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-          <header class="masthead mb-auto">
-            <div class="inner">
-              <div id="logotopo" align="left"><img class="fundologo" src="images/plano.png"></div>
-              <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link" id="colortext" href="#">Quem somos</a>
-                <a class="nav-link" id="colortext" href="#">Nossa franquia virtual</a>
-                <a class="nav-link" id="colortext" href="#">Seja nosso corretor associado</a>
-              </nav>
-            </div>
-          </header>
-    
-          <div class="container">
-              <button type="button" class="plano-btn-index">Secondary</button>
-              <button type="button" class="plano-btn-index">Secondary</button>
-              <button type="button" class="plano-btn-index">Secondary</button>
-              <button type="button" class="plano-btn-index">Secondary</button>
-              
-            </div>
-    
-          <footer class="mastfoot mt-auto">
-            <div class="inner">
-              <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </footer>
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <div id="logotopo" align="left">
+                        <img class="fundologo" src="images/plano.png">
+                    </div>
+                    <nav class="nav nav-masthead justify-content-center" >
+                        <a class="nav-link" id="colortext" href="#">Quem somos</a>
+                        <a class="nav-link" id="colortext" href="#">Nossa franquia virtual</a>
+                        <a class="nav-link" id="colortext" href="#">Seja nosso corretor associado</a>
+                    </nav>
+                </div>
+            </header>
         </div>
+        <!--END HEADER-->
+
+        <!--BOTOES CONTAINER -->
+        <div class="container" align="center" id="Mid">
+            <a href="/alugueis"><button type="button" class="plano-btn-index" >Alugar<br/><span class="ButtonText">Imóvel</span></button></a>
+            <a href="/vendas"> <button type="button" class="plano-btn-index" href="/vendas">Comprar<br/><span class="ButtonText">Imóvel</span></button></a>
+            <a href="/"><button type="button" class="plano-btn-index" href="">Anunciar<br/><span class="ButtonText">Seu imóvel</span></button></a>
+            <a href="/login"><button type="button" class="plano-btn-index" href="/login">Área Exclusiva<br/><span class="ButtonText">Clientes efetivos</span></button></a>
+        </div>
+        <!--END BOTOES CONTAINER -->
+
+        <!--BARRA BRANCA-->
+        <div class="Barra"></div>
+        <!--END BARRA BRANCA-->
+                
+        <!--INFOS-->
+        <div class="Infoscolor">
+            <div class="executivo" >
+                <a  href="" class="exec">  
+                    <p class="centerp"><h1 class="bold50">Alugue</h1>&nbsp;
+                    <h2 class="bold50">Seu espaço</h2>&nbsp;
+                    <h2 class="bold50">executivo</h2>&nbsp;
+                    <h2 class="bold50">conosco!</h2></p>&nbsp;
+                </a>
+            </div>
+
+            <!--CHECKINFO-->
+            <div class="checkInfo">
+                <ul>
+                    <li><h2 class="bold">INSTITUCIONAL</h2></li>
+                    <li><h2 class="bold">ATENDIMENTO EXCLUSIVO</h2></li>
+                </ul>
+                <ul align="left">
+                    <li><h4 class="bold">Avaliamos seu imóvel</h4></li>
+                    <li><h4 class="bold">Quero alugar</h4></li>
+                    <li><h4 class="bold">Quero vender</h4></li>
+                    <li><h4 class="bold">Nossa sede</h4></li>
+                    <li><h4 class="bold">Simule seu financiamento</h4></li>
+                    <li><h4 class="bold">Private Brokers</h4></li>
+                    <li><h4 class="bold">Sobre a Plano</h4></li>
+                    <li><h4 class="bold">Trabalhe conosco</h4></li>
+                    <li><h4 class="bold">Dúvidas e sugestões</h4></li>
+                    <li><h4 class="bold">Das taxas e honorários de serviços ao cliente proprietário</h4></li>
+                </ul>
+            </div>
+            <!--END CHECKINFO-->
+            
+            <!--REDES SOCIAIS-->
+            <div class="social">
+                <h2 class="bold">Acompanhe-nos nas redes sociais!</h2>
+                <a class="btn btn-social-icon btn-lg btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><span class="fa fa-facebook"></span></a>
+                <a class="btn btn-social-icon btn-lg btn-instagram" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-instagram']);"><span class="fa fa-instagram"></span></a>
+                <a class="btn btn-social-icon btn-lg btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><span class="fa fa-twitter"></span></a>
+                <a class="btn btn-social-icon btn-lg btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);"><span class="fa fa-google"></span></a>
+                <a class="btn btn-social-icon btn-lg btn-youtube" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-youtube']);" style="background-color:white"><span class="fa fa-youtube"></span></a>
+            </div><br/>
+            <!--END REDES SOCIAIS-->
+
+            <!--CONTATOS-->
+            <div id="menuContatos">
+                <ul class="nav">
+                    <li class="nav-item" id="menuContatos-arrow-left">
+                        <
+                    </li>
+                    <li class="nav-item" id="menuContatos-arrow-right">
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <span class="fa fa-whatsapp"></span><br/>
+                        Nosso Whatsapp<br/>
+                        Plano Imóveis<br/>
+                        (61) 98407-2008
+                    </li>
+                    <li class="nav-item">
+                        Atendimento<br />
+                        Telefone<br />
+                        (Central)<br />
+                        (61) 3034-7700
+                    </li>
+                    <li class="nav-item">
+                        Atendimento<br />
+                        E-mail<br />
+                        contato@planoimoveis.com.br
+                    </li>
+                    <li class="nav-item">
+                        Atendimento<br />
+                        CHAT<br />
+                        ONLINE
+                    </li>
+                    <li class="nav-item"><br />
+                        LIGAMOS<br />
+                        PARA VOCÊ
+                    </li>
+                </ul>
+            </div>
+            <!--END CONTATOS-->
+
+        </div>
+        <!--END INFOS-->
+  
+    </div>
+    <!--END FUNDO BG-->
+
 </body>
 </html>

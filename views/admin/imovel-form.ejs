@@ -4,9 +4,7 @@
 <head>
 
     <% include ../includes/headerPainel.ejs %>
-
-    <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>Imóvel - Novo</title>
 
 </head>
 
@@ -18,34 +16,6 @@
 
         <!-- PAGE CONTENT-->
         <div class="page-content--bgf7">
-
-            <!-- BREADCRUMB-->
-            <section class="au-breadcrumb2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="au-breadcrumb-content">
-                                <div class="au-breadcrumb-left">
-                                    <ul class="list-unstyled list-inline au-breadcrumb__list">
-                                        <li class="list-inline-item active">
-                                            <a href="#">Admin</a>
-                                        </li>
-                                        <li class="list-inline-item seprate">
-                                            <span>/</span>
-                                        </li>
-                                        <li class="list-inline-item">Imóveis</li>
-                                        <li class="list-inline-item seprate">
-                                            <span>/</span>
-                                        </li>
-                                        <li class="list-inline-item">Novo Imóvel</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END BREADCRUMB-->
 
             <!-- MAIN CONTENT-->
             <section class="main-content">
@@ -150,6 +120,7 @@
                                             <label for="vagas">Vagas:</label>
                                             <input type="number" name="vagas" id="vagas" class="form-control">
                                         </div>
+                                        <br />
                                         <button type="submit" class="btn btn-primary">Gravar</button>
                                         <a class="btn btn-primary" href="/admin/imoveis">Voltar</a>
                                     </form>
@@ -189,3 +160,4 @@
     <% include ../includes/scriptPainel.ejs %>
 
 </body>
+</html>

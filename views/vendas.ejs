@@ -92,7 +92,7 @@
     }
 
     function searchOportunidades() {
-        $('#searchResults').empty();
+        $('#searchResults1').empty();
         $.getJSON('/search/vendas/oportunidades', function(jq) {
             for(var i = 0; i < jq.length; i++) {
                 console.log(jq[i]);
@@ -200,8 +200,13 @@
         <% include ./includes/avisarAnuncio.ejs %>
         <!-- Fim Modal AvisoDeAnuncio -->
     </div>        
-    <div id="searchResults" class="d-flex flex-wrap justify-content-center" style="padding:5px">
+    <h1 align="center">Destaques</h1>
+    <div id="searchResults" class="d-flex flex-wrap justify-content-center" style="padding:5px"><br/>
     </div>
+    <h1 align="Center">Oportunidades Únicas</h1>
+    <div id="searchResults1" class="d-flex flex-wrap justify-content-center" style="padding:5x"><br/>
+    </div>
+    <div>
     <% include ./includes/footer.ejs %>
 </body>
 </html>

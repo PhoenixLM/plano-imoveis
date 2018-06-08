@@ -59,6 +59,7 @@
         $('#searchResults').append(card);
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip(); 
+            
         });
     }
     function search() {
@@ -78,7 +79,7 @@
 
     function searchDestaques() {
         $('#searchResults').empty();
-        $.getJSON('/search/vendas/destaques', function(jq) {
+        $.getJSON('/search/alugueis/destaques', function(jq) {
             for(var i = 0; i < jq.length; i++) {
                 console.log(jq[i]);
                 spawnCard(jq[i]);
@@ -88,7 +89,7 @@
 
     function searchOportunidades() {
         $('#searchResults').empty();
-        $.getJSON('/search/vendas/oportunidades', function(jq) {
+        $.getJSON('/search/alugueis/oportunidades', function(jq) {
             for(var i = 0; i < jq.length; i++) {
                 console.log(jq[i]);
                 spawnCard(jq[i]);
@@ -97,16 +98,19 @@
     }
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
+        searchDestaques();
+        searchOportunidades();
         $(".radioGroup").click(function () {
             $(".radioGroup").removeClass("active");
             $(this).addClass("active");
             procedencia = event.target.id;
             search();
+            
         });
     });
 </script>
 <body>
-   
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
     <div class="bg" style="padding: 100px 10px 10px 10px">
         <div class="column" style="padding: 0 0 0 120px">
           <h1 class="display-2 stylish-text">Locação</h1>

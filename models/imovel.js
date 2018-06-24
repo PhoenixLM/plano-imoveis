@@ -71,12 +71,12 @@ const imovelSchema = new Schema({
         type: Boolean,
         required: true
     },
-    isComercial: {
+    isResidencial:{
         type: Boolean,
         required: true
     },
-    isResidencia:{
-        type: Boolean,
+    tipo: {
+        type: String,
         required: true
     }
 

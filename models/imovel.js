@@ -78,6 +78,10 @@ const imovelSchema = new Schema({
     tipo: {
         type: String,
         required: true
+    },
+    descricao: {
+        type: String,
+        required: false
     }
 
 })

@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yvesnrb/plano-imoveis.git"
+    "url": "git+https://github.com/PhoenixLM/plano-imoveis/tree/frontend"
   },
-  "author": "Yves Bodê",
+  "author": "Leonardo Marcoski",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yvesnrb/plano-imoveis/issues"
+    "url": "https://github.com/PhoenixLM/plano-imoveis/tree/frontend"
   },
   "homepage": "https://github.com/yvesnrb/plano-imoveis#readme",
   "dependencies": {

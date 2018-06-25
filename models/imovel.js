@@ -73,7 +73,7 @@ const imovelSchema = new Schema({
     },
     isResidencial:{
         type: Boolean,
-        required: true
+        required: false
     },
     tipo: {
         type: String,
@@ -82,6 +82,10 @@ const imovelSchema = new Schema({
     descricao: {
         type: String,
         required: false
+    },
+    titulo:{
+        type: String,
+        required: true
     }
 
 })

@@ -51,11 +51,11 @@
                                 <table class="table table-borderless table-data3">
                                     <thead class="blue-grey lighten-4">
                                         <tr>
+                                            <th>TITULO DO ANUNCIO</th>
                                             <th>ID</th>
                                             <th>CEP</th>
                                             <th>ENDEREÇO</th>
                                             <th>MODALIDADE</th>
-                                            <th>RESIDENCIAL OU COMERCIAL</th>
                                             <th>DESTAQUE</th>
                                             <th>OPORTUNIDADE</th>
                                             <th>OPÇÕES</th>
@@ -64,13 +64,13 @@
                                     <tbody>
                                         <% for(var i = 0; i < imovels.length; i++) { %>
                                             <tr>
+                                                <td><%= imovels[i].titulo %></td>
                                                 <td><%= imovels[i]._id %></td>
                                                 <td><%= imovels[i].cep %></td>
                                                 <td><%= imovels[i].endereco %></td>
                                                 <td><%= imovels[i].isVenda ? "VENDA" : "ALUGUEL" %></td>
-                                                <td><%= imovels[i].isResidencial ? "RESIDENCIAL" : "COMERCIAL" %></td>
-                                                <td><%= imovels[i].isDestaque ? "SIM" : "" %></td>
-                                                <td><%= imovels[i].isOportunidade ? "SIM" : "" %></td>
+                                                <td><%= imovels[i].isDestaque ? "SIM" : "NÃO" %></td>
+                                                <td><%= imovels[i].isOportunidade ? "SIM" : "NÃO" %></td>
                                                 <td><a href="/admin/imoveis/search/<%= imovels[i]._id %>">Editar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/admin/imoveis/delete/<%= imovels[i]._id %>">Deletar</a></td>
                                             </tr>
                                         <% } %>

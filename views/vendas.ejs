@@ -25,7 +25,8 @@
         if(!(UrlExists(url))) {
             url = 'img/default/thumb.jpg'
         }
-        var valor = "R$" + imovel.valor
+        var titulo = imovel.titulo;
+        var valor = "R$" + imovel.valor;
         var dormitorios = "&nbsp";
         var suites = "";
         var banheiros = "";
@@ -53,7 +54,8 @@
         var card = "<div class='card' style='margin:5px'>" + 
                    "<img class='card-img-top' src='" + url + "' alt='Card image cap'>" +
                    "<div class='card-body'>" +
-                   "<h4 class='card-title'><a>" + valor + "</a></h4>" +
+                   "<h4 class='card-title'><a>" + titulo + "</a></h4>" +
+                   "<h5 class='card-title'><a>" + valor + "</a></h4>" +
                    "<p class='card-text'>" + dormitorios + suites + banheiros + vagas + "</p>" +
                    "</div>";
         $('#searchResults').append(card);
@@ -110,9 +112,6 @@
     });
 </script>
 <style>
-    #content-wraper {
-        margin: 1% 5%;
-    }
     .fundologo {
         display: block;
         background: linear-gradient(to top, transparent, #fbfdfe, transparent);
@@ -189,7 +188,7 @@
             <div id="header" class="row">
                 <div class="col-1">
                     <div id="logotopo" align="left">
-                        <img class="fundologo" src="images/plano.png">
+                       <a href="/"><img class="fundologo" src="images/plano.png"></a>
                     </div>
                 </div>
                 <div class="col-11">

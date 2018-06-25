@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% include ./includes/header.ejs %>
     <link rel="stylesheet" href="/css/stylesheet.css">
-    <title>Comprar</title>
+    <title>Alugar</title>
 </head>
 <script>
     var procedencia = 'null';
@@ -59,6 +59,7 @@
         $('#searchResults').append(card);
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip(); 
+            
         });
     }
     function search() {
@@ -66,52 +67,51 @@
         var bairro = $('#select_bairro').val();
         var preco = $('#number_preco').val();
         if(preco === '') preco = "null"
-        console.log('Pesquisa recebida: ' + procedencia + ' ' + tipo + ' ' + bairro + ' ' + preco);
+        console.log('Pesquisa recebida: ' + tipo + ' ' + bairro + ' ' + preco);
         $('#searchResults').empty();
-        $.getJSON('/search/vendas/' + procedencia + '&' + tipo + '&' + bairro + '&' + preco, function(jq) {
+        $.getJSON('/search/alugueis/' + tipo + '&' + bairro + '&' + preco, function(jq) {
             for(var i = 0; i < jq.length; i++) {
                 console.log(jq[i]);
                 spawnCard(jq[i]);
             }
         });
     }
+
     function searchDestaques() {
         $('#searchResults').empty();
-        $.getJSON('/search/vendas/destaques', function(jq) {
+        $.getJSON('/search/alugueis/destaques', function(jq) {
             for(var i = 0; i < jq.length; i++) {
                 console.log(jq[i]);
                 spawnCard(jq[i]);
             }
         });
     }
+
     function searchOportunidades() {
         $('#searchResults').empty();
-        $.getJSON('/search/vendas/oportunidades', function(jq) {
+        $.getJSON('/search/alugueis/oportunidades', function(jq) {
             for(var i = 0; i < jq.length; i++) {
                 console.log(jq[i]);
                 spawnCard(jq[i]);
             }
         });
-    }
-    function searchBox(objButton) {
-        if($('.submenu').css('display','none')){
-            $('.submenu').css('display','contents');
-            $('#searchBox').html(objButton.innerText);
-        }
     }
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
         searchDestaques();
+        searchOportunidades();
         $(".radioGroup").click(function () {
             $(".radioGroup").removeClass("active");
             $(this).addClass("active");
             procedencia = event.target.id;
+            search();
+            
         });
     });
 </script>
 <style>
-    #content-wraper {
-        margin: 1% 5%;
+    body {
+        background-color:#dcdcdc;
     }
     .fundologo {
         display: block;
@@ -119,7 +119,7 @@
         margin-top: 15px;
         float:left;
     }
-    #header, #menu, #conteudo {
+    #header, #menu {
         background-color: #dcdcdc;
     }
     #header .row {
@@ -129,14 +129,14 @@
         margin: 10px 0;
         font-size: 20px;
     }
-    #header .title-vendas h2 {
+    #header .title-alugueis h2 {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #000;
         line-height: 0.1em;
         margin: 10px 0 20px;
     }
-    #header .title-vendas .title {
+    #header .title-alugueis .title {
         font-size: 50px;
         font-family: 'Times New Roman', Times, serif;
         background-color: #dcdcdc;
@@ -148,16 +148,10 @@
         text-align: center;
         padding: 5px 30px;
     }
-    #menu {
-        border-bottom: 1px solid #808080;
-    }
+   
     #menu button {
-        display: block;
         background-color: #87ceea;
-        margin: 15px 5px;
-        border: 0;
-        padding: 10px;
-        width: 100%;
+        float:right;    
         border: 2px solid #fff;
     }
     .submenu {
@@ -168,11 +162,7 @@
     .submenu .form-control {
         margin-top: 20px;
     }
-    #conteudo {
-        margin-top: 20px;
-        border-top: 1px solid #808080;
-        border: 1px solid #000;
-    }
+
     #searchResults {
         margin: 0 auto;
     }
@@ -201,13 +191,13 @@
                         </nav>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-9 title-vendas">
-                            <h2><span class="title">Vendas</span></h2>
+                        <div class="col-9 title-alugueis">
+                            <h2><span class="title">Alugueis</span></h2>
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="span-gray">
-                            Faça aqui sua opção de compra
+                            Faça sua busca de aluguel
                         </div>
                     </div>
                 </div>
@@ -216,30 +206,10 @@
 
 
             <div class="row" id="menu">
-                <div class="col-1"></div>
-                <div class="col-2">
-                    <button type="button" id="construcao" onclick="searchBox(this);">Em Construção</button>
-                </div>
-                <div class="col-2">
-                    <button type="button" id="novo" onclick="searchBox(this);">Novos/Prontos (1ª revenda)</button>
-                </div>
-                <div class="col-2">
-                    <button type="button" id="revenda" onclick="searchBox(this);">Prontos/Revenda</button>
-                </div>
-                <div class="col-2">
-                    <button type="button" id="oportunidades" class="" onclick="searchBox(this);">Oportunidades Únicas</button>
-                </div>
-                <div class="col-2">
-                    <button type="button" id="outros" onclick="searchBox(this);">Outros imóveis</button>
-                </div>
-                <div class="col-1"></div>
+          
                 
-                <div class="row submenu vertical-align">
-                    <div class="col-1"></div>
-                    <div class="col-2">
-                        <button type="button" id="searchBox"></button>
-                    </div>
-                    <div class="col-2">
+     
+                    <div class="col-2" style="margin-left:20%">
                         <select name="tipo" class="form-control" id="select_tipo" width="30px">
                             <option value="null" selected>Tipo de Imóvel</option>
                             <option value="apartamento">Apartamento</option>
@@ -294,24 +264,25 @@
                             <option value="zona industrial">Zona Industrial</option>
                         </select>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2" > 
                         <input type="number" class="form-control" id="number_preco" placeholder="Valor">
+                        <button type="button" class="" id="btn_pesquisar" onclick="search();" style="height: 43px;">Buscar</button>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="" id="btn_pesquisar" onclick="search();">Buscar</button>
+                      
                     </div>
                 </div>
             </div>
 
             
         <!--BARRA BRANCA-->
-        <div class="Barra"></div>
+        <div class="barra" style="background:white;height: 30px;"> </div>
         <!--END BARRA BRANCA-->
             
 
             <div class="row" id="conteudo">
                 <div class="col-12">
-                    <h1 align="center">Destaques de Vendas</h1>
+                    <h1 align="center">Destaques de alugueis</h1>
                 </div>
                 <div id="searchResults" class="d-flex flex-wrap justify-content-center" style="padding:5px"></div>
             </div>

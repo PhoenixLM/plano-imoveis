@@ -19,7 +19,6 @@ module.exports = (app) => {
         res.render('locacao')
     })
 
-
     app.get('/textpesquisa', (req, res, next) => {
         res.render('textpesquisa')
     })

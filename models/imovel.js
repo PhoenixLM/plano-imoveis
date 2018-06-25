@@ -70,7 +70,20 @@ const imovelSchema = new Schema({
     isOportunidade: {
         type: Boolean,
         required: true
+    },
+    isResidencial:{
+        type: Boolean,
+        required: true
+    },
+    tipo: {
+        type: String,
+        required: true
+    },
+    descricao: {
+        type: String,
+        required: false
     }
+
 })
 
 imovelSchema.post('remove', function(imovel) {
